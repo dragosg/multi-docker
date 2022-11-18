@@ -22,6 +22,7 @@ jobs:
       - run: docker push ddumitrescu/multi-nginx-10-14
       - run: docker push ddumitrescu/multi-server-10-14
       - run: docker push ddumitrescu/multi-worker-10-14
+      
  
       - name: Generate deployment package
         run: zip -r deploy.zip . -x '*.git*'
