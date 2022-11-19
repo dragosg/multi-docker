@@ -22,7 +22,7 @@ jobs:
       - run: docker push ddumitrescu/multi-nginx-10-14
       - run: docker push ddumitrescu/multi-server-10-14
       - run: docker push ddumitrescu/multi-worker-10-14
-      
+
  
       - name: Generate deployment package
         run: zip -r deploy.zip . -x '*.git*'
@@ -34,7 +34,7 @@ jobs:
           aws_secret_key: ${{ secrets.AWS_SECRET_KEY }}
           application_name: multi-gh
           environment_name: Multigh-env
-          existing_bucket_name: elasticbeanstalk-us-east-1-924137156810
-          region: us-east-1
+          existing_bucket_name: elasticbeanstalk-eu-west-2-924137156810
+          region: eu-west-2
           version_label: ${{ github.sha }}
           deployment_package: deploy.zip
